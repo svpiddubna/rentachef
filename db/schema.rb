@@ -10,12 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_25_152247) do
-
+ActiveRecord::Schema.define(version: 2019_02_25_153928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
@@ -27,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_02_25_152247) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-
   create_table "chefs", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -38,6 +35,15 @@ ActiveRecord::Schema.define(version: 2019_02_25_152247) do
     t.boolean "availability", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,5 +62,5 @@ ActiveRecord::Schema.define(version: 2019_02_25_152247) do
 
   add_foreign_key "bookings", "chefs"
   add_foreign_key "bookings", "users"
-
+  add_foreign_key "reviews", "bookings"
 end
