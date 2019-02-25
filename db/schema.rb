@@ -12,8 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_02_25_152247) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
@@ -24,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_02_25_152247) do
     t.index ["chef_id"], name: "index_bookings_on_chef_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
+
 
   create_table "chefs", force: :cascade do |t|
     t.string "first_name"
@@ -53,4 +56,5 @@ ActiveRecord::Schema.define(version: 2019_02_25_152247) do
 
   add_foreign_key "bookings", "chefs"
   add_foreign_key "bookings", "users"
+
 end
