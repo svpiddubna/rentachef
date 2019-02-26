@@ -1,1 +1,10 @@
-<h2>Choose your chef</h2>
+<div class='container'>
+  <div class='row'>
+    <h2>Choose your chef</h2>
+    <% @chefs.each do |chef| %>
+      <div class="col-xs-12 col-md-6">
+        <%= render 'chefs/card', chef: chef %>
+      </div>
+    <% end %>
+  </div>
+</div>
