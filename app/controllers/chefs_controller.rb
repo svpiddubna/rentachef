@@ -1,6 +1,6 @@
 class ChefsController < ApplicationController
   def index
-    @chefs = Chef.where(location: params[:location])
+    @chefs = Chef.where('lower(location) LIKE ?', params[:location].downcase)
   end
 
   def show
