@@ -5,7 +5,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.chef = Chef.find(params[:chef_id])
+    @booking.user = current_user
     @booking.save
+    redirect_to booking_path(@booking)
   end
 
   def destroy
