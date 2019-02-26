@@ -1,8 +1,12 @@
 <div class="navbar-wagon">
   <!-- Logo -->
+  <div id="brand-logo">
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
   <% end %>
+
+  <h5 id="product-title"><strong>Rentachef</strong></h5>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -12,7 +16,7 @@
       <!-- Links when logged in -->
       <%= link_to "Register as a chef", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Find a chef", "/chefs?utf8=✓&location=berlin", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My bookings", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

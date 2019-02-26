@@ -10,6 +10,16 @@
   justify-content: space-between;
 }
 
+/* Product Title */
+
+#brand-logo {
+  display:flex;
+  align-items: center;
+  h5 {
+    padding: 20px;
+  }
+}
+
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
