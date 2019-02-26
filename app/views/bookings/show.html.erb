@@ -1,9 +1,15 @@
-<h1>Your booking</h1>
-<h3>Your Chef: <%=@booking.chef.first_name %>
-<%=@booking.chef.last_name%></h3>
-<h3>Date: <%= @booking.date %></h3>
-<h3>Status: Pending</h3>
-<br>
-<br>
-<%= link_to "Back to search results", root_path, class: "btn btn-primary" %>
-<%= link_to "Cancel this booking", booking_path(@booking), method: :delete, class: "btn btn-danger" %>
+<div class='container'>
+  <div class='row'>
+    <div class="col-xs-12 col-md-6 col-md-offset-3 ">
+      <div class='card-confirmation'>
+      <h1>Congratulations! Your booking request has been sent</p>
+      <p>Your Chef: <%= link_to @booking.chef.first_name, chef_path(@booking.chef), class: 'text-decoration-none' %>
+      <p>Date: <%= @booking.date %></p>
+      <p>Status: Pending</p>
+      <p></p>
+         <%= link_to "Back to search results", root_path, class: "btn btn-success" %>
+      <%= link_to "Cancel this booking", booking_path(@booking), method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
