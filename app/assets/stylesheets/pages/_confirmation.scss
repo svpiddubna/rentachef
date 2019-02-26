@@ -1,0 +1,26 @@
+.card-confirmation {
+  margin-top: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: center;
+
+}
+.card-confirmation h1 {
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.card-confirmation p {
+  font-size: 18px;
+  opacity: .7;
+  font-weight: lighter;
+}
+.text-decoration-none {
+  text-decoration: none;
+   &:hover {
+      text-decoration: none;
+    }
+}
