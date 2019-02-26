@@ -8,10 +8,12 @@ class BookingsController < ApplicationController
     @booking.chef = Chef.find(params[:chef_id])
     @booking.user = current_user
     @booking.save
-    redirect_to booking_path(@booking)
+    redirect_to chef_booking_path(@booking.chef, @booking)
   end
 
   def destroy
+    @booking.destroy
+    redirect_to root_path
   end
 
   private
