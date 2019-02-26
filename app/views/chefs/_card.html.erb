@@ -1,11 +1,13 @@
-<div class="card-chef">
-  <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-  <div class="card-chef-infos">
-    <div>
-      <h2><%= link_to chef.first_name, chef_path(chef) %></h2>
-      <p><%= chef.description %></p>
+<%= link_to chef_path(chef), class: "text-dec-none" do%>
+  <div class="card-chef">
+    <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+    <div class="card-chef-infos">
+      <div>
+        <h2><%= chef.first_name %></h2>
+        <p><%= chef.description %></p>
+      </div>
+      <h2 class="card-chef-pricing"><%= chef.rate %>€/h</h2>
+      <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-chef-user avatar-bordered"/>
     </div>
-    <h2 class="card-chef-pricing"><%= chef.rate %>€/h</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-chef-user avatar-bordered"/>
   </div>
-</div>
+<% end %>
