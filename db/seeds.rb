@@ -7,6 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-20.times do
-  Chef.create(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Restaurant.description, location: Faker::Address.city, rate: Faker::Number.number(2), cuisine: Faker::Restaurant.type)
+10.times do
+  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: Berlin, rate: Faker::Number.number(2), cuisine: Faker::Restaurant.type)
+  chef.save!
+end
+10.times do
+  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: London, rate: Faker::Number.number(2), cuisine: Faker::Restaurant.type)
+  chef.save!
+end
+10.times do
+  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: Paris, rate: Faker::Number.number(2), cuisine: Faker::Restaurant.type)
+  chef.save!
 end
