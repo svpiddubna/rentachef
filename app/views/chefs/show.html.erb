@@ -1,0 +1,21 @@
+<h1> Hey there, I am <%= @chef.first_name %> <%= @chef.last_name %></h1>
+
+<br>
+<br>
+
+<div>
+  <h3>Location: <%= @chef.location %></h3>
+  <h3>Cuisine: <%= @chef.cuisine %></h3>
+  <h3>Rate: <%= @chef.rate %>€/hour</h3>
+</div>
+
+<br>
+<br>
+
+<h3>Get to know me:</h3>
+<p><%= @chef.description %></p>
+
+<br>
+<br>
+
+<%= link_to "Back to search results", root_path, class: "btn btn-warning" %>
