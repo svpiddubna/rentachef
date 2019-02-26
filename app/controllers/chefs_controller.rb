@@ -1,7 +1,11 @@
 class ChefsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @chefs = Chef.where('lower(location) LIKE ?', params[:location].downcase)
+    if params[:location].present?
+      @chefs = Chef.where('lower(location) LIKE ?', params[:location].downcase)
+    else
+      @chefs = Chef.all
+    end
   end
 
   def show

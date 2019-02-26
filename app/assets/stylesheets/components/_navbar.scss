@@ -11,6 +11,14 @@
 }
 
 /* Product Title */
+.title-text-dec-none  {
+  color: black;
+  text-decoration: none;
+  &:hover {
+  color: black;
+  text-decoration: none;
+  }
+}
 
 #brand-logo {
   display:flex;
