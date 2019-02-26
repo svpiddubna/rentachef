@@ -1,2 +1,12 @@
-<h1>Find great </h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>Find great chefs to cook delicious meals at your home!</h2>
+
+
+<!-- Searching for Chefs based on location -->
+
+<div>
+  <%= form_tag(chefs_path, :method => "get") do %>
+    <%= label_tag(:location, "Search for chefs:") %>
+    <%= text_field_tag(:location) %>
+    <%= submit_tag("Find by location")%>
+  <% end %>
+</div>
