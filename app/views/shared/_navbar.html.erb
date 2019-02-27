@@ -24,7 +24,7 @@
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%  if current_user.photo? %>
-          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= cl_image_tag current_user.photo.url(:bright_face), class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% else %>
           <%= image_tag "http://2.bp.blogspot.com/-SDqMr0T36Ng/UDILDXFdhhI/AAAAAAAACno/ZCjiciy3pxI/s1600/BATMAN+FB+PROFILE.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% end %>

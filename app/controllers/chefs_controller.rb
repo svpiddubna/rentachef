@@ -22,6 +22,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     @chef.first_name = current_user.first_name
     @chef.last_name = current_user.last_name
+    @chef.user = current_user
     if @chef.save
       redirect_to chef_path(@chef), notice: "You're ready to go!"
     else
