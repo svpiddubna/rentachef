@@ -7,7 +7,7 @@
     <p>Made fresh, in the comfort of your home.</p>
 
 <!-- Landing page search form -->
-      <%= form_tag(chefs_path, :method => "get", class: 'form-inputs') do %>
+      <%= form_tag(chefs_path, :method => "get", class: 'form_inputs') do %>
         <%= text_field_tag(:location) %>
         <%= submit_tag("Find great chefs by location", class: "btn btn-success") %>
       <% end %>
