@@ -4,7 +4,6 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
   <% end %>
-
   <%= link_to root_path, class: 'title-text-dec-none' do %>
     <h5 id="product-title"><strong>Rentachef</strong></h5>
   <% end %>
@@ -16,14 +15,20 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+
       <%= link_to "Register as a chef", new_chef_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Find a chef", "/chefs?utf8=✓&location=", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Find a Chef", "/chefs?utf8=✓&location=berlin", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Dashboard", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%  if current_user.photo? %>
+          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% else %>
+          <%= image_tag "http://2.bp.blogspot.com/-SDqMr0T36Ng/UDILDXFdhhI/AAAAAAAACno/ZCjiciy3pxI/s1600/BATMAN+FB+PROFILE.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <% end %>
+
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>

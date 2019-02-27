@@ -24,13 +24,14 @@
         <h3>Want me to cook for you?</h3>
         <%= simple_form_for [@chef, @booking] do |f| %>
         <%= f.input :date %>
-        <%= f.submit "Book now!", class: "btn btn-warning" %>
+        <%= f.hidden_field :location, :value => params[:location] %>
+        <%= f.submit "Book now!", class: "btn btn-success" %>
         <% end %>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12" style="margin: 30px 0 0 12px">
-    <%= link_to "Back to search results", root_path, class: "btn btn-primary" %>
+    <%= link_to "Back to search results", chefs_path(location: @location), class: "btn btn-primary" %>
   </div>
   </div>
   </div>

@@ -8,14 +8,14 @@
 require 'faker'
 
 10.times do
-  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: "Berlin", rate: Faker::Number.number(2), cuisine: Faker::Restaurant.type)
+  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: "Berlin", rate: Faker::Number.number(2), cuisine: "French")
   chef.save!
 end
 10.times do
-  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: "London", rate: Faker::Number.number(2), cuisine: Faker::Restaurant.type)
+  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: "London", rate: Faker::Number.number(2), cuisine: "Korean")
   chef.save!
 end
 10.times do
-  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: "Paris", rate: Faker::Number.number(2), cuisine: Faker::Restaurant.type)
+  chef = Chef.new(first_name:Faker::Name.first_name, last_name: Faker::Name.last_name, description: Faker::Hipster.sentence(3), location: "Paris", rate: Faker::Number.number(2), cuisine: "Italian")
   chef.save!
 end
