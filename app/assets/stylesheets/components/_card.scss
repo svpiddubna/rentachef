@@ -28,6 +28,7 @@
 // }
 .card-chef {
   margin-top: 20px;
+  margin-bottom: 20px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -90,4 +91,14 @@
 }
 
 
+.card-profile {
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ max-width: 400px;
+ margin: 30px 0 0 0;
+ padding: 0;
+ text-align: center;
+}
 
+.card-profile-text {
+  padding: 0 0 20px 0;
+}
