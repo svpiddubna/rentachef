@@ -4,8 +4,8 @@
     <h1>Create your profile</h1>
     <%= simple_form_for @chef do |f| %>
     <div class="form-inputs">
-      <%= f.input :cuisine, label: "Select your cuisine", placeholder: "e.g. French", collection: ["Italian", "French", "German", "Lebanese", "Korean", "Spanish", "Thai", "Japanese", "South African", "Australian", "Caribbean", "Greek", "Filipino","Scottish", "Indian", "Mexican", "Indonesian", "Brazilian", "Chinese", "American"] %>
-      <%= f.input :location, label: "Where are you located?", placeholder: "e.g. Berlin", collection: [ "Berlin", "Paris", "London"] %>
+      <%= f.input :cuisine, label: "Select your cuisine", collection: ["Italian", "French", "German", "Lebanese", "Korean", "Spanish", "Thai", "Japanese", "South African", "Australian", "Caribbean", "Greek", "Filipino","Scottish", "Indian", "Mexican", "Indonesian", "Brazilian", "Chinese", "American"] %>
+      <%= f.input :location, label: "Where are you located?", placeholder: "Enter your city" %>
       <%= f.input :rate, label: "How much do you charge per hour?", placeholder: "e.g. 15", collection: 1..100 %>
       <%= f.input :description, label: "Please tell us something about yourself and your cooking experiences.", placeholder: "My name is Jeanette and I have been a professional cook for almost 10 years now. I have worked in small and mediums sized kitchens all around the world and I love asian cuisine!" %>
     </div>
