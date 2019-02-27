@@ -1,11 +1,10 @@
 class ChefsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    if params[:location].present?
-      @chefs = Chef.where('lower(location) LIKE ?', params[:location].downcase)
-    else
-      @chefs = Chef.all
-    end
+    @chefs = Chef.all
+    @chefs = @chefs.where('lower(location) LIKE ?', params[:location].downcase) if params[:location].present?
+    @chefs = @chefs.where('lower(cuisine) LIKE ?', params[:cuisine].downcase) if params[:cuisine].present?
+    @chefs = @chefs.where(@chefs.arel_table[:rate].lt(params[:rate])) if params[:rate].present?
   end
 
   def show
@@ -13,3 +12,4 @@ class ChefsController < ApplicationController
     @booking = Booking.new
   end
 end
+
