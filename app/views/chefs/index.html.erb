@@ -8,7 +8,7 @@
           <%= select_tag(:cuisine, options_for_select(["Italian", "French", "German", "Lebanese", "Korean", "Spanish", "Thai", "Japanese", "South African", "Australian", "Caribbean", "Greek", "Filipino","Scottish", "Indian", "Mexican", "Indonesian", "Brazilian", "Chinese", "American"]), prompt: "Select cuisine") %>
           <%= text_field_tag(:location, params[:location], class: 'hidden') %>
           <%= number_field_tag(:rate, params[:rate], class: 'hidden') %>
-          <%= submit_tag("Cuisine", class: "btn btn-success") %>
+          <%= submit_tag("Cuisine", class: "btn btn-success btn-sm") %>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-4">
@@ -16,7 +16,7 @@
           <%= text_field_tag(:location, params[:location]) %>
           <%= number_field_tag(:rate, params[:rate], class: 'hidden') %>
           <%= text_field_tag(:cuisine, params[:cuisine], class: 'hidden') %>
-          <%= submit_tag("Location", class: "btn btn-success") %>
+          <%= submit_tag("Location", class: "btn btn-success btn-sm") %>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-4">
@@ -24,7 +24,7 @@
           <%= number_field_tag(:rate, params[:rate]) %>
           <%= text_field_tag(:location, params[:location], class: 'hidden') %>
           <%= text_field_tag(:cuisine, params[:cuisine], class: 'hidden') %>
-          <%= submit_tag("Max. price", class: "btn btn-success") %>
+          <%= submit_tag("Max. price", class: "btn btn-success btn-sm") %>
         <% end %>
       </div>
     </div>

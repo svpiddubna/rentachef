@@ -1,32 +1,10 @@
-// .card-category {
-//   height: 180px;
-//   // display: flex;
-//   // flex-direction:block;
-//   // justify-content: center;
-//   // align-items: center;
-//   color: #333333;
-//   font-size: 19px;
-//   font-weight: light;
-//   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-//   border-radius: 5px;
-//   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-//   padding: 15px;
-// }
-
-// .card-chef {
-//   margin-top: 15px;
-//   a {
-//     color: #878787;
-//     &:hover {
-//       color: #b2b2b2;
-//       text-decoration: none;
-//     }
-//     &:active {
-//       color: #878787;
-//     }
-//   }
-// }
+.label-abs {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 .card-chef {
+  position: relative;
   margin-top: 20px;
   margin-bottom: 20px;
   overflow: hidden;
