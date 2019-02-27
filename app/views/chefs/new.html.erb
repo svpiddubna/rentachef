@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 offset-md-5">
+    <h1>Create your profile</h1>
+    <%= simple_form_for @chef do |f| %>
+    <div class="form-inputs">
+      <%= f.input :cuisine, label: "What is your cuisine?", placeholder: "e.g. French" %>
+      <%= f.input :location, label: "Where are you located?", placeholder: "e.g. Berlin", collection: [ "Berlin", "Paris", "London"] %>
+      <%= f.input :rate, label: "How much do you charge per hour?", placeholder: "e.g. 15", collection: 1..100 %>
+      <%= f.input :description, label: "Please tell us something about yourself and your cooking experiences.", placeholder: "My name is Jeanette and I have been a professional cook for almost 10 years now. I have worked in small and mediums sized kitchens all around the world and I love asian cuisine!" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Continue", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+  </div>
+</div>
