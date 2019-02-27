@@ -5,5 +5,6 @@ class DashboardController < ApplicationController
     @bookings = @user.bookings
     @upcoming_bookings = @bookings.where("date > '#{Date.current}'")
     @past_bookings = @bookings.where("date < '#{Date.current}'")
+
   end
 end
