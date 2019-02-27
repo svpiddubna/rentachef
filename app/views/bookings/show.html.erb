@@ -7,7 +7,7 @@
       <p>Date: <%= @booking.date %></p>
       <p>Status: Pending</p>
       <p></p>
-         <%= link_to "Back to search results", root_path, class: "btn btn-success" %>
+         <%= link_to "Back to search results", chefs_path(location: @location), class: "btn btn-primary" %>
       <%= link_to "Cancel this booking", booking_path(@booking), method: :delete, class: "btn btn-danger" %>
       </div>
     </div>
