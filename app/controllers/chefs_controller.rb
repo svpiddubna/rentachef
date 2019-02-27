@@ -22,7 +22,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     @chef.first_name = current_user.first_name
     @chef.last_name = current_user.last_name
-    if @chef.save!
+    if @chef.save
       redirect_to chef_path(@chef), notice: "You're ready to go!"
     else
       render :new
@@ -32,6 +32,6 @@ class ChefsController < ApplicationController
   private
 
   def chef_params
-    params.require(:chef).permit(:description, :cuisine, :location, :rate)
+    params.require(:chef).permit(:photo, :photo_cache, :description, :cuisine, :location, :rate)
   end
 end
