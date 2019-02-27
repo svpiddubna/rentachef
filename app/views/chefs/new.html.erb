@@ -8,7 +8,7 @@
         <%= f.input :location, label: "Where are you located?", placeholder: "Enter your city" %>
         <%= f.input :rate, label: "How much do you charge per hour?", placeholder: "e.g. 15", collection: 1..100 %>
         <%= f.input :description, label: "Please tell us something about yourself and your cooking experiences.", placeholder: "My name is Jeanette and I have been a professional cook for almost 10 years now. I have worked in small and mediums sized kitchens all around the world and I love asian cuisine!" %>
-        <%= f.input :photo %>
+        <%= f.input :photo, label: "You can upload a picture of your food here" %>
         <%= f.input :photo_cache, as: :hidden %>
       </div>
 
