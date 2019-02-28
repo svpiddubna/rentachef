@@ -1,6 +1,6 @@
 <%= link_to chef_path(chef, location: params[:location]),  class: "text-dec-none" do%>
   <div class="card-chef">
-    <div class="label label-info label-abs"><%= chef.cuisine %></div>
+    <div class="label label-info label-abs"><i class="fas fa-utensils"> </i> <%= chef.cuisine %></div>
     <%= cl_image_tag chef.photo %>
     <div class="card-chef-infos">
       <div>
