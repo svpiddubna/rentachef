@@ -74,9 +74,20 @@
  max-width: 400px;
  margin: 30px 0 0 0;
  padding: 0;
- text-align: center;
+ text-align: left;
 }
 
 .card-profile-text {
-  padding: 0 0 20px 0;
+  padding: 0 0 20px 30px;
+  position: relative;
+}
+
+.chef-show-avatar{
+  position: absolute;
+  right: 16px;
+  top: -10px;
+  width: 120px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
 }
