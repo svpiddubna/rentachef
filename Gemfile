@@ -19,8 +19,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
 gem 'hover-rails', '~> 2.3', '>= 2.3.2.1'
 
