@@ -36,4 +36,3 @@ class ChefsController < ApplicationController
     params.require(:chef).permit(:photo, :photo_cache, :description, :cuisine, :location, :rate)
   end
 end
-
