@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="profile">
-      <h3 class="h3-margin"> Hey there, I am <%= @chef.first_name %> <%= @chef.last_name %></h3>
+      <h3 class="h3-margin"><%= @chef.first_name %> <%= @chef.last_name %></h3>
       <div>
         <div class="col-xs-12 col-md-6">
           <div class="card-profile">
             <img src= <%= @chef.photo %> alt="Me", class="profile-pic">
             <br>
             <br>
-
             <div class="card-profile-text">
-              <p>Location: <strong><%= @chef.location %></strong></p>
-              <p>Cuisine: <strong><%= @chef.cuisine %></strong></p>
-              <p>Rate: <strong><%= @chef.rate %>€/hour</strong></p>
+              <%= cl_image_tag @chef.user.photo.url(:bright_face), class: "chef-show-avatar" if @chef&.user&.photo %>
+              <p><i class="far fa-map"></i> <strong><%= @chef.location %></strong></p>
+              <p><i class="fas fa-utensils"></i> <strong><%= @chef.cuisine %></strong></p>
+              <p><i class="fas fa-money-bill"></i> <strong><%= @chef.rate %>€/hour</strong></p>
             </div>
           </div>
         </div>
@@ -24,13 +24,13 @@
 
         <% unless current_user.chef.id == @chef.id  %>
 
-          <h3>Want me to cook for you?</h3>
+        <h3>Want me to cook for you?</h3>
 
-          <%= simple_form_for [@chef, @booking] do |f| %>
-          <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-          <%= f.hidden_field :location, :value => params[:location] %>
-          <%= f.submit "Cook for me", class: "btn btn-success" %>
-          <% end %>
+        <%= simple_form_for [@chef, @booking] do |f| %>
+        <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+        <%= f.hidden_field :location, :value => params[:location] %>
+        <%= f.submit "Cook for me", class: "btn btn-success" %>
+        <% end %>
         <% else %>
         <% end %>
       </div>
