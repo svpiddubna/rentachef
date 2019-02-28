@@ -4,8 +4,8 @@
     <%= cl_image_tag chef.photo %>
     <div class="card-chef-infos">
       <div>
-        <h2><%= chef.first_name %></h2>
-        <p><%= chef.description %></p>
+        <h2 id="card-chef-info-header"><%= chef.first_name %></h2>
+        <p id="card-chef-info-descpription"><%= chef.description %></p>
       </div>
       <h2 class="card-chef-pricing"><%= chef.rate %>€/h</h2>
       <%= cl_image_tag chef.user.photo.url(:bright_face), class: "card-chef-user avatar-bordered" if chef&.user&.photo %>

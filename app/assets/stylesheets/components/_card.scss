@@ -48,17 +48,18 @@
 }
 
 .card-chef .card-chef-infos {
-  padding: 16px;
+  padding: 14px 25px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  font-size: 40px;
 }
 
 .card-chef-infos .card-chef-user {
   position: absolute;
   right: 16px;
-  top: -60px;
+  top: -50px;
   width: 80px;
 }
 
@@ -86,7 +87,7 @@
   position: relative;
 }
 
-.chef-show-avatar{
+.chef-show-avatar {
   position: absolute;
   right: 16px;
   top: -10px;
@@ -94,4 +95,13 @@
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+}
+
+#card-chef-info-header {
+  font-size: 20px;
+  padding: 0 0 5px 0;
+}
+
+#card-chef-info-descpription {
+  font-size: 14px;
 }
