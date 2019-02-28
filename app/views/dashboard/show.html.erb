@@ -1,21 +1,88 @@
 <div class='container'>
-  <div class='row'>
-    <h2>Welcome <%= current_user.first_name %> <%= current_user.last_name %></h2>
-    <div class="col-xs-12">
-    <h4><u>Upcoming bookings:</u></h4>
-      <ol><h4><% @upcoming_bookings.each do |booking| %>
-      <li>You have a booking with <strong><%= booking.chef.first_name %> <%= booking.chef.last_name %></strong> on: <strong><%= booking.date %></strong> <%= link_to "Cancel this booking", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
-      </li>
-      <% end %></ol></h4>
-
-    <h4><u>Previous bookings:</u></h4>
-      <ol><h4><% @past_bookings.each do |booking| %>
-      <li>You booked <strong><%= booking.chef.first_name %> <%= booking.chef.last_name %></strong> on: <strong><%= booking.date %></strong>
-      </li>
-      <% end %></ol></h4>
-
+  <h1>Welcome <%= current_user.first_name %>!</h1>
+  <p>Your upcoming bookings:</p>
+  <p><% @inviting_upcoming_bookings.each do |booking| %>
+    <div class='row'>
+      <div class="card-product">
+        <div class="col-xs-12 col-md-1">
+          <%= cl_image_tag booking.chef.photo.url(:bright_face), class: 'card-avatar' %>
+        </div>
+        <div class="col-xs-12 col-md-5">
+          You are inviting
+          <%= link_to booking.chef.first_name, chef_path(booking.chef) %>
+           on: <strong><%= booking.date %></strong>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <% if booking.confirmed === false %>
+            <span class="label label-info">Pending</span>
+          <% elsif booking.confirmed === true %>
+            <span class="label label-success">Confirmed</span>
+          <% else %>
+            <span class="label label-danger">Rejected</span>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+        </div>
+      </div>
     </div>
+    <% end %>
+  </p>
+  <p>Expired bookings:</p>
+  <p>
+    <% @inviting_past_bookings.each do |booking| %>
+      <div class='row'>
+        <div class="card-product">
+          <div class="col-xs-12 col-md-1">
+            <%= cl_image_tag booking.chef.photo.url(:bright_face), class: 'card-avatar' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            You booked <strong><%= booking.chef.first_name %> <%= booking.chef.last_name %></strong> on: <strong><%= booking.date %></strong>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </p>
+
+  <% if @user.chef %>
+  <h4>Your booking requests</h4>
+  <p>
+    <% @meeting_upcoming_bookings.each do |booking| %>
+      <div class='row'>
+        <div class="card-product">
+          <div class="col-xs-12 col-md-1">
+            <%= cl_image_tag booking.user.photo.url(:bright_face), class: 'card-avatar' %>
+            </div>
+          <div class="col-xs-12 col-md-5">
+            You are meeting <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong> on: <strong><%= booking.date %></strong>
+          </div>
+          <div class="col-xs-12 col-md-3">
+            <% if !booking.confirmed %>
+              <%= link_to "Accept", booking_path(booking), method: :patch, class: "btn btn-success"%>
+            <% end %>
+          </div>
+          <div class="col-xs-12 col-md-3">
+            <%= link_to "Cancel", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <p>Expired bookings:</p>
+    <p>
+    <% @meeting_past_bookings.each do |booking| %>
+      <div class='row'>
+        <div class="card-product">
+          <div class="col-xs-12 col-md-1">
+            <%= cl_image_tag booking.chef.photo.url(:bright_face), class: 'card-avatar' %>
+          </div>
+          <div class="col-xs-12 col-md-6">
+            You booked <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong> on: <strong><%= booking.date %></strong>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
+
 
 

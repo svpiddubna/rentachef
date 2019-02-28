@@ -5,7 +5,7 @@ class ChefsController < ApplicationController
     @chefs = Chef.all
     @chefs = @chefs.where('lower(location) LIKE ?', params[:location].downcase) if params[:location].present?
     @chefs = @chefs.where('lower(cuisine) LIKE ?', params[:cuisine].downcase) if params[:cuisine].present?
-    @chefs = @chefs.where(@chefs.arel_table[:rate].lt(params[:rate])) if params[:rate].present?
+    @chefs = @chefs.where('rate <= ?', params[:rate]) if params[:rate].present?
   end
 
   def show
