@@ -22,7 +22,7 @@
         <h3>Get to know me:</h3>
         <p><%= @chef.description %></p>
 
-        <% unless current_user.chef.id == @chef.id  %>
+        <% unless user_signed_in? && current_user.chef.id == @chef.id %>
 
         <h3>Want me to cook for you?</h3>
 
