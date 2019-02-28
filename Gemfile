@@ -22,6 +22,8 @@ gem 'webpacker'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 
+gem 'hover-rails', '~> 2.3', '>= 2.3.2.1'
+
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'devise'
 
