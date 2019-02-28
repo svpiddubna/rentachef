@@ -14,7 +14,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 295px;
+  height: 290px;
 }
 
 .card-chef > img {
@@ -107,7 +107,11 @@
 }
 
 #card-chef-info-descpription {
-  font-size: 14px;
+  font-size: 16px;
   width: 430px;
   height: 40px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 7px 0 0 0;
 }
