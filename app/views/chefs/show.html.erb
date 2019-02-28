@@ -17,15 +17,18 @@
           </div>
         </div>
       </div>
+
       <div class="col-xs-12 col-md-6">
         <h3>Get to know me:</h3>
         <p><%= @chef.description %></p>
-
+        <% unless current_user.chef.id == @chef.id  %>
         <h3>Want me to cook for you?</h3>
         <%= simple_form_for [@chef, @booking] do |f| %>
         <%= f.input :date %>
         <%= f.hidden_field :location, :value => params[:location] %>
         <%= f.submit "Book now!", class: "btn btn-success" %>
+        <% end %>
+        <% else %>
         <% end %>
       </div>
     </div>
