@@ -1,7 +1,20 @@
 input[type="range"] {
   width:200px;
+  display: inline-block;
+}
+
+.range-slider__value {
+  position: absolute;
+  top: -2px;
+  left: 122px;
 }
 
 #slider-input {
-  margin: 0;
+  position: absolute;
+  bottom: -29px;
+}
+
+#rate-button {
+  position:absolute;
+  right: 42px;
 }

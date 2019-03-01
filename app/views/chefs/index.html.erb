@@ -5,35 +5,35 @@
       <div class="col-xs-12 col-md-4">
         <%= form_tag(chefs_path, :method => "get", class: 'filter-form-inputs') do %>
 
-          <%= select_tag(:cuisine, options_for_select(["Italian", "French", "German", "Lebanese", "Korean", "Spanish", "Thai", "Japanese", "South African", "Australian", "Caribbean", "Greek", "Filipino","Scottish", "Indian", "Mexican", "Indonesian", "Brazilian", "Chinese", "American"]), prompt: "Select cuisine") %>
-          <%= text_field_tag(:location, params[:location], class: 'hidden') %>
-          <%= number_field_tag(:rate, params[:rate], class: 'hidden') %>
-          <%= submit_tag("Cuisine", class: "btn btn-success btn-sm") %>
+        <%= select_tag(:cuisine, options_for_select(["Italian", "French", "German", "Lebanese", "Korean", "Spanish", "Thai", "Japanese", "South African", "Australian", "Caribbean", "Greek", "Filipino","Scottish", "Indian", "Mexican", "Indonesian", "Brazilian", "Chinese", "American"]), prompt: "Select cuisine") %>
+        <%= text_field_tag(:location, params[:location], class: 'hidden') %>
+        <%= number_field_tag(:rate, params[:rate], class: 'hidden') %>
+        <%= submit_tag("Cuisine", class: "btn btn-success btn-sm") %>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-4">
         <%= form_tag(chefs_path, :method => "get", class: 'filter-form-inputs') do %>
-          <%= text_field_tag(:location, params[:location]) %>
-          <%= number_field_tag(:rate, params[:rate], class: 'hidden') %>
-          <%= text_field_tag(:cuisine, params[:cuisine], class: 'hidden') %>
-          <%= submit_tag("Location", class: "btn btn-success btn-sm") %>
+        <%= text_field_tag(:location, params[:location]) %>
+        <%= number_field_tag(:rate, params[:rate], class: 'hidden') %>
+        <%= text_field_tag(:cuisine, params[:cuisine], class: 'hidden') %>
+        <%= submit_tag("Location", class: "btn btn-success btn-sm") %>
         <% end %>
       </div>
       <div class="col-xs-12 col-md-4">
         <%= form_tag(chefs_path, :method => "get", class: 'filter-form-inputs range-slider') do %>
-          <span class="range-slider__value"></span>
-          <%= range_field_tag(:rate, params[:rate], in: 10...100  , step: 5, id: "slider-input") %>
-          <%= text_field_tag(:location, params[:location], class: 'hidden') %>
-          <%= text_field_tag(:cuisine, params[:cuisine], class: 'hidden') %>
-          <%= submit_tag("Max. price", class: "btn btn-success btn-sm") %>
+        <span class="range-slider__value"></span>
+        <%= range_field_tag(:rate, params[:rate], in: 10..100  , step: 5, id: "slider-input") %>
+        <%= text_field_tag(:location, params[:location], class: 'hidden') %>
+        <%= text_field_tag(:cuisine, params[:cuisine], class: 'hidden') %>
+        <%= submit_tag("Max. price", class: "btn btn-success btn-sm", id: "rate-button") %>
         <% end %>
       </div>
     </div>
     <div class='row'>
       <% @chefs.each do |chef| %>
-        <div class="col-xs-12 col-md-6">
-          <%= render 'chefs/card', chef: chef %>
-        </div>
+      <div class="col-xs-12 col-md-6">
+        <%= render 'chefs/card', chef: chef %>
+      </div>
       <% end %>
     </div>
   </div>

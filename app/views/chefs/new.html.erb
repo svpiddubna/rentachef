@@ -7,7 +7,7 @@
         <%= f.input :cuisine, label: "Select your cuisine", collection: ["Italian", "French", "German", "Lebanese", "Korean", "Spanish", "Thai", "Japanese", "South African", "Australian", "Caribbean", "Greek", "Filipino","Scottish", "Indian", "Mexican", "Indonesian", "Brazilian", "Chinese", "American"] %>
         <%= f.input :location, label: "Where are you located?", placeholder: "Enter your city" %>
         <%= f.input :rate, label: "Expected hourly service cost", placeholder: "e.g. 15", collection: 1..100 %>
-        <%= f.input :description, label: "A bit about yourself", placeholder: "eg. I have been cooking for 7 years ..." %>
+        <%= f.input :description, label: "A bit about yourself", placeholder: "eg. I was trained by Chef Jimmy :)" %>
         <%= f.input :photo, label: "Upload a picture of your dishes!", input_html: { class: 'hidden' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a food photo!' %>
         <%= f.input :photo_cache, as: :hidden %>
       <div class="form-actions">
