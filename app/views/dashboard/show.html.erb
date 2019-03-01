@@ -6,7 +6,7 @@
       <div class='row'>
         <div class="card-product">
           <div class="col-xs-12 col-md-1">
-            <%= cl_image_tag booking.chef.photo.url(:bright_face), class: 'card-avatar' %>
+            <%= cl_image_tag booking.chef.user.photo.url(:bright_face), class: 'card-avatar' %>
           </div>
           <div class="col-xs-12 col-md-5">
             You are inviting chef <%= link_to booking.chef.first_name, chef_path(booking.chef) %>
@@ -34,7 +34,7 @@
         <div class='row'>
           <div class="card-product">
             <div class="col-xs-12 col-md-1">
-              <%= cl_image_tag booking.chef.photo.url(:bright_face), class: 'card-avatar' %>
+              <%= cl_image_tag booking.chef.user.photo.url(:bright_face), class: 'card-avatar' %>
             </div>
             <div class="col-xs-12 col-md-5">
               You booked <strong><%= booking.chef.first_name %> <%= booking.chef.last_name %></strong> on: <strong><%= booking.date %></strong>
@@ -74,7 +74,7 @@
           <div class='row'>
             <div class="card-product">
               <div class="col-xs-12 col-md-1">
-                <%= cl_image_tag booking.chef.photo.url(:bright_face), class: 'card-avatar' %>
+                <%= cl_image_tag booking.user.photo.url(:bright_face), class: 'card-avatar' %>
               </div>
               <div class="col-xs-12 col-md-5">
                 You cooked for <strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong> on: <strong><%= booking.date %></strong>
