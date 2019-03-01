@@ -1,20 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-6 offset-md-5">
-      <h1>Create your profile</h1>
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <h2>Register as a Chef</h2>
       <%= simple_form_for @chef do |f| %>
       <div class="form-inputs">
         <%= f.input :cuisine, label: "Select your cuisine", collection: ["Italian", "French", "German", "Lebanese", "Korean", "Spanish", "Thai", "Japanese", "South African", "Australian", "Caribbean", "Greek", "Filipino","Scottish", "Indian", "Mexican", "Indonesian", "Brazilian", "Chinese", "American"] %>
         <%= f.input :location, label: "Where are you located?", placeholder: "Enter your city" %>
-        <%= f.input :rate, label: "How much do you charge per hour?", placeholder: "e.g. 15", collection: 1..100 %>
-        <%= f.input :description, label: "Please tell us something about yourself and your cooking experiences.", placeholder: "My name is Jeanette and I have been a professional cook for almost 10 years now. I have worked in small and mediums sized kitchens all around the world and I love asian cuisine!" %>
-        <%= f.input :photo, label: "You can upload a picture of your food here" %>
+        <%= f.input :rate, label: "Expected hourly service cost", placeholder: "e.g. 15", collection: 1..100 %>
+        <%= f.input :description, label: "A bit about yourself", placeholder: "eg. I have been cooking for 7 years ..." %>
+        <%= f.input :photo, label: "Upload a picture of your dishes!", input_html: { class: 'hidden' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a food photo!' %>
         <%= f.input :photo_cache, as: :hidden %>
-      </div>
-
       <div class="form-actions">
         <%= f.button :submit, "Continue", class: "btn btn-primary" %>
       </div>
+      </div>
+
       <% end %>
     </div>
   </div>
