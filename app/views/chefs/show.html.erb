@@ -26,8 +26,10 @@
         <h3>Want me to cook for you?</h3>
 
         <%= simple_form_for [@chef, @booking] do |f| %>
+        <div class="datefield">
         <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
         <%= f.hidden_field :location, :value => params[:location] %>
+        </div>
         <%= f.submit "Cook for me", class: "btn btn-success" %>
         <% end %>
 
