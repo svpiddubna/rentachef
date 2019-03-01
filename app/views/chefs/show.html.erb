@@ -22,7 +22,6 @@
         <h3>Get to know me:</h3>
         <p><%= @chef.description %></p>
 
-        <% unless user_signed_in? && current_user.chef.id == @chef.id %>
 
         <h3>Want me to cook for you?</h3>
 
@@ -31,8 +30,7 @@
         <%= f.hidden_field :location, :value => params[:location] %>
         <%= f.submit "Cook for me", class: "btn btn-success" %>
         <% end %>
-        <% else %>
-        <% end %>
+
       </div>
     </div>
 
