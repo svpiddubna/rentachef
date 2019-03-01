@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="profile">
-      <h3 class="h3-margin"><%= @chef.first_name %> <%= @chef.last_name %></h3>
+    <div class="chef-profile">
+      <h1 ><%= @chef.first_name %> <%= @chef.last_name %></h1>
       <div>
         <div class="col-xs-12 col-md-6">
           <div class="card-profile">
-            <img src= <%= @chef.photo %> alt="Me", class="profile-pic">
+            <img src= <%= @chef.photo %> alt="Chef's photo", class="profile-pic">
             <br>
             <br>
             <div class="card-profile-text">
@@ -38,7 +38,7 @@
 
     <div class="row">
       <div class="col-xs-12" style="margin: 30px 0 0 12px">
-        <%= link_to "Back to search results", chefs_path(location: @location), class: "btn btn-primary" %>
+        <%= link_to "Back to search results", chefs_path(location: @location), class: "btn btn-info" %>
       </div>
     </div>
   </div>
