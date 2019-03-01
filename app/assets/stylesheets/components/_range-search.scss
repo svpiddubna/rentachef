@@ -9,12 +9,29 @@ input[type="range"] {
   left: 122px;
 }
 
-#slider-input {
-  position: absolute;
-  bottom: -29px;
+.slider-position {
+  position:relative;
+}
+
+#input-cuisine {
+  width: 200px;
+  height: 36px;
+  padding-bottom: 5px;
+  padding-top: 2px;
+
+}
+
+#input-location {
+  width: 200px;
+  height: 35px;
+  padding-bottom: 5px;
+  padding-top: 2px;
+}
+
+.range-slider {
+  display: flex;
 }
 
 #rate-button {
-  position:absolute;
-  right: 42px;
+  margin-left: 8px;
 }
