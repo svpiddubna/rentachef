@@ -21,7 +21,7 @@
       </div>
       <div class="col-xs-12 col-md-4">
         <%= form_tag(chefs_path, :method => "get", class: 'filter-form-inputs range-slider') do %>
-          <span class="range-slider__value">0</span>
+          <span class="range-slider__value"></span>
           <%= range_field_tag(:rate, params[:rate], in: 10...100  , step: 5, id: "slider-input") %>
           <%= text_field_tag(:location, params[:location], class: 'hidden') %>
           <%= text_field_tag(:cuisine, params[:cuisine], class: 'hidden') %>
